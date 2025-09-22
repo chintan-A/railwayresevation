@@ -2,7 +2,7 @@
 #include <cstring>
 using namespace std;
 
-// ---------------- Train Class ----------------
+
 class Train {
 private:
     int trainNumber;
@@ -11,10 +11,10 @@ private:
     char destination[50];
     char trainTime[10];
 
-    static int trainCount;  // Static member
+    static int trainCount;  
 
 public:
-    // Default Constructor
+    
     Train() {
         trainNumber = 0;
         strcpy(trainName, "");
@@ -24,7 +24,7 @@ public:
         trainCount++;
     }
 
-    // Parameterized Constructor
+
     Train(int number, const char* name, const char* src, const char* dest, const char* time) {
         trainNumber = number;
         strcpy(trainName, name);
@@ -34,12 +34,12 @@ public:
         trainCount++;
     }
 
-    // Destructor
+
     ~Train() {
         trainCount--;
     }
 
-    // Getters and Setters
+
     void setTrainNumber(int number) { trainNumber = number; }
     int getTrainNumber() const { return trainNumber; }
 
@@ -55,7 +55,6 @@ public:
     void setTrainTime(const char* time) { strcpy(trainTime, time); }
     const char* getTrainTime() const { return trainTime; }
 
-    // Input train details
     void inputTrainDetails() {
         cout << "Enter Train Number: ";
         cin >> trainNumber;
@@ -70,7 +69,7 @@ public:
         cin.getline(trainTime, 10);
     }
 
-    // Display train details
+    
     void displayTrainDetails() const {
         cout << "Train Number: " << trainNumber << endl;
         cout << "Train Name: " << trainName << endl;
@@ -79,20 +78,20 @@ public:
         cout << "Train Time: " << trainTime << endl;
     }
 
-    // Static function
+ 
     static int getTrainCount() {
         return trainCount;
     }
 };
 
-// Initialize static member
+
 int Train::trainCount = 0;
 
 
-// ---------------- RailwaySystem Class ----------------
+
 class RailwaySystem {
 private:
-    Train trains[100];   // Array of objects
+    Train trains[100];  
     int totalTrains;
 
 public:
@@ -138,7 +137,7 @@ public:
 };
 
 
-// ---------------- Main Function ----------------
+
 int main() {
     RailwaySystem system;
     int choice;
@@ -182,3 +181,4 @@ int main() {
 
     return 0;
 }
+
